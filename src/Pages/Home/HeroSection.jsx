@@ -11,7 +11,7 @@ export default function HeroSection() {
                 <br />
                 Developer
              </h1>
-                <p className="hero--section-description"> Welcome to my Web App,
+                <p className="hero--section-description"> Welcome to my Portfolio,
                 <br />  Would you like to watch some cool stuff that I make and Get in touch ?
              </p>
            </div>
