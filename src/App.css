@@ -222,12 +222,12 @@ h3 {
 
   .hero--section--content {
     display: flex;
-    felx-direction: column;
+    flex-direction: column;
     align-items: flex-start;
     gap: 21.333px;
   }
 
-  .hero--section--content--box > button {
+  .hero--section--content-box > button {
     margin-top: 21.333px;
   }
 
