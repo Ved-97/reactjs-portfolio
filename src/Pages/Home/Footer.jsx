@@ -18,7 +18,7 @@ function Footer() {
                 offset={-70}
                 duration={500}
                 to="heroSection"
-                className="text-md"
+                className="footer--md"
               >
                 Home
               </Link>
@@ -31,10 +31,23 @@ function Footer() {
                 offset={-70}
                 duration={500}
                 to="MyPortfolio"
-                className="text-md"
+                className="footer--md"
               >
                 Portfolio
               </Link>
+            </li>
+            <li>
+            <Link
+              activeClass="navbar--active-content"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              to="mySkills"
+              className="footer--md"
+            >
+              Skills
+            </Link>
             </li>
             <li>
               <Link
@@ -44,7 +57,7 @@ function Footer() {
                 offset={-70}
                 duration={500}
                 to="AboutMe"
-                className="text-md"
+                className="footer--md"
               >
                 About Me
               </Link>
@@ -57,22 +70,9 @@ function Footer() {
                 offset={-70}
                 duration={500}
                 to="Contact"
-                className="text-md"
+                className="footer--md"
               >
                 Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="testimonial"
-                className="text-md"
-              >
-                Testimonials
               </Link>
             </li>
           </ul>
@@ -172,7 +172,7 @@ function Footer() {
       </div>
       <hr className="divider" />
       <div className="footer--content--container">
-        <p className="footer--content">Made with 💖 by John</p>
+        <p className="footer--content">Made by Vedant</p>
         <div className="footer--social--icon">
           <ul>
             <li>
