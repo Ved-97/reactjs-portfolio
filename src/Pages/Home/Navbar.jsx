@@ -83,13 +83,28 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
+              to="mySkills"
+              className="navbar--content"
+            >
+              Skills
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={closeMenu}
+              activeClass="navbar--active-content"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
               to="AboutMe"
               className="navbar--content"
             >
               About Me
             </Link>
           </li>
-          <li>
+          
+          {/* <li>
             <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
@@ -102,7 +117,8 @@ function Navbar() {
             >
               Testimonials
             </Link>
-          </li>
+          </li> */}
+
         </ul>
       </div>
       <Link
