@@ -1,3 +1,6 @@
+
+// Navbar.jsx (Tailwind-converted)
+
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
@@ -15,7 +18,7 @@ function Navbar() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 500) {
-        closeMenu;
+        closeMenu();
       }
     };
 
@@ -28,26 +31,30 @@ function Navbar() {
 
   useEffect(() => {
     if (window.innerWidth <= 1200) {
-      closeMenu;
+      closeMenu();
     }
   }, []);
 
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
-      <div>
-        <img src="./img/logo.svg" alt="Logoipsum" />
+      <div className="flex items-center">
+        <img className="h-10 w-30" src="./img/logo.png" alt="Logo" />
       </div>
       <a
-        className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
+        className={`nav__hamburger ${navActive ? "active" : ""}`}
       >
-        <span className="nav__hamburger__line"></span>
-        <span className="nav__hamburger__line"></span>
-        <span className="nav__hamburger__line"></span>
+        <span className="block h-1 w-6 bg-black mb-1"></span>
+        <span className="block h-1 w-6 bg-black mb-1"></span>
+        <span className="block h-1 w-6 bg-black mb-1"></span>
       </a>
-      <div className={`navbar--items ${navActive ? "active" : ""}`}>
-        <ul>
-          <li>
+      <div
+        className={`navbar--items ${
+          navActive ? "active" : ""
+        } lg:flex lg:items-center`}
+      >
+        <ul className="flex flex-col lg:flex-row lg:items-center">
+          <li className="py-1 lg:py-0">
             <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
@@ -61,7 +68,7 @@ function Navbar() {
               Home
             </Link>
           </li>
-          <li>
+          <li className="py-1 lg:py-0">
             <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
@@ -75,7 +82,7 @@ function Navbar() {
               Portfolio
             </Link>
           </li>
-          <li>
+          <li className="py-1 lg:py-0">
             <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
@@ -89,7 +96,7 @@ function Navbar() {
               Skills
             </Link>
           </li>
-          <li>
+          <li className="py-1 lg:py-0">
             <Link
               onClick={closeMenu}
               activeClass="navbar--active-content"
@@ -103,7 +110,6 @@ function Navbar() {
               About Me
             </Link>
           </li>
-
         </ul>
       </div>
       <Link
@@ -114,7 +120,7 @@ function Navbar() {
         offset={-70}
         duration={500}
         to="Contact"
-        className="btn btn-outline-primary"
+        className="btn btn-outline-primary ml-4"
       >
         Contact Me
       </Link>
@@ -123,3 +129,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
