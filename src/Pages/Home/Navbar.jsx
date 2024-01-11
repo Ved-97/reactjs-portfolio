@@ -36,94 +36,122 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${navActive ? "active" : ""}`}>
+    // <nav className={`navbar ${navActive ? "active" : ""}`}>
+    //   <div className="flex items-center">
+    //     <img className="h-10 w-30" src="./img/logo.png" alt="Logo" />
+    //   </div>
+    //   <a
+    //     onClick={toggleNav}
+    //     className={`nav__hamburger ${navActive ? "active" : ""}`}
+    //   >
+    //     <span className="block h-1 w-6 bg-black mb-1"></span>
+    //     <span className="block h-1 w-6 bg-black mb-1"></span>
+    //     <span className="block h-1 w-6 bg-black mb-1"></span>
+    //   </a>
+    //   <div
+    //     className={`navbar--items ${
+    //       navActive ? "active" : ""
+    //     } lg:flex lg:items-center`}
+    //   >
+    //     <ul className="flex flex-col lg:flex-row lg:items-center">
+    //       <li className="py-1 lg:py-0">
+    //         <Link
+    //           onClick={closeMenu}
+    //           activeClass="navbar--active-content"
+    //           spy={true}
+    //           smooth={true}
+    //           offset={-70}
+    //           duration={500}
+    //           to="heroSection"
+    //           className="navbar--content"
+    //         >
+    //           Home
+    //         </Link>
+    //       </li>
+    //       <li className="py-1 lg:py-0">
+    //         <Link
+    //           onClick={closeMenu}
+    //           activeClass="navbar--active-content"
+    //           spy={true}
+    //           smooth={true}
+    //           offset={-70}
+    //           duration={500}
+    //           to="MyPortfolio"
+    //           className="navbar--content"
+    //         >
+    //           Portfolio
+    //         </Link>
+    //       </li>
+    //       <li className="py-1 lg:py-0">
+    //         <Link
+    //           onClick={closeMenu}
+    //           activeClass="navbar--active-content"
+    //           spy={true}
+    //           smooth={true}
+    //           offset={-70}
+    //           duration={500}
+    //           to="mySkills"
+    //           className="navbar--content"
+    //         >
+    //           Skills
+    //         </Link>
+    //       </li>
+    //       <li className="py-1 lg:py-0">
+    //         <Link
+    //           onClick={closeMenu}
+    //           activeClass="navbar--active-content"
+    //           spy={true}
+    //           smooth={true}
+    //           offset={-70}
+    //           duration={500}
+    //           to="AboutMe"
+    //           className="navbar--content"
+    //         >
+    //           About Me
+    //         </Link>
+    //       </li>
+    //     </ul>
+    //   </div>
+    //   <Link
+    //     onClick={closeMenu}
+    //     activeClass="navbar--active-content"
+    //     spy={true}
+    //     smooth={true}
+    //     offset={-70}
+    //     duration={500}
+    //     to="Contact"
+    //     className="btn btn-outline-primary ml-4"
+    //   >
+    //     Contact Me
+    //   </Link>
+    // </nav>
+
+    <nav className={`navbar flex justify-between items-center px-4 py-3 bg-white shadow fixed top-0 left-0 right-0 ${navActive ? "active" : ""}`}>
       <div className="flex items-center">
         <img className="h-10 w-30" src="./img/logo.png" alt="Logo" />
       </div>
-      <a
-        onClick={toggleNav}
-        className={`nav__hamburger ${navActive ? "active" : ""}`}
-      >
+      <a onClick={toggleNav} className={`nav__hamburger ${navActive ? "active" : ""}`}>
         <span className="block h-1 w-6 bg-black mb-1"></span>
         <span className="block h-1 w-6 bg-black mb-1"></span>
         <span className="block h-1 w-6 bg-black mb-1"></span>
       </a>
-      <div
-        className={`navbar--items ${
-          navActive ? "active" : ""
-        } lg:flex lg:items-center`}
-      >
-        <ul className="flex flex-col lg:flex-row lg:items-center">
+      <div className={`navbar--items ${navActive ? "active" : ""} lg:flex lg:items-center`}>
+        <ul className="flex flex-col lg:flex-row lg:items-center gap-4">
           <li className="py-1 lg:py-0">
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="heroSection"
-              className="navbar--content"
-            >
-              Home
-            </Link>
+            <Link onClick={closeMenu} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="heroSection" className="navbar--content">Home</Link>
           </li>
           <li className="py-1 lg:py-0">
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="MyPortfolio"
-              className="navbar--content"
-            >
-              Portfolio
-            </Link>
+            <Link onClick={closeMenu} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="MyPortfolio" className="navbar--content">Portfolio</Link>
           </li>
           <li className="py-1 lg:py-0">
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="mySkills"
-              className="navbar--content"
-            >
-              Skills
-            </Link>
+            <Link onClick={closeMenu} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="mySkills" className="navbar--content">Skills</Link>
           </li>
           <li className="py-1 lg:py-0">
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="AboutMe"
-              className="navbar--content"
-            >
-              About Me
-            </Link>
+            <Link onClick={closeMenu} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="AboutMe" className="navbar--content">About Me</Link>
           </li>
         </ul>
       </div>
-      <Link
-        onClick={closeMenu}
-        activeClass="navbar--active-content"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        to="Contact"
-        className="btn btn-outline-primary ml-4"
-      >
-        Contact Me
-      </Link>
+      <Link onClick={closeMenu} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="Contact" className="btn btn-outline-primary ml-4">Contact Me</Link>
     </nav>
   );
 }
