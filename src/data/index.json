@@ -4,19 +4,19 @@
       "id": "1",
       "src": "./img/product-chain-1.png",
       "title": "Front-End",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Elevating user experiences with a fusion of JavaScript mastery, HTML structure, CSS styling, and proficiency in frameworks like React.js, Tailwind CSS, and Bootstrap."
     },
     {
       "id": "2",
       "src": "./img/tag-1.png",
       "title": "Back-End",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Powering robust server-side functionality with a command of languages like Python and C#, alongside expertise in Rest API development. Leveraging frameworks such as Node.js for seamless backend solutions."
     },
     {
       "id": "3",
       "src": "./img/feather-pen-2.png",
       "title": "UI & UX Design",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "description": "Crafting compelling user interfaces and enhancing user experiences through innovative UI/UX design strategies, ensuring aesthetic appeal and seamless interaction flow."
     },
     {
       "id": "4",
