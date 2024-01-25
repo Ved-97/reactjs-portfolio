@@ -2,9 +2,7 @@
 export default function AboutMe() {
   return (
     <section id="AboutMe" className="grid grid-cols-2 gap-x-20 items-center py-32 px-4">
-      <div className="border h-fit w-fit">
-        <img src="./img/about-me.jpg" alt="About Me" className="w-full h-full" />
-      </div>
+      
       <div className="flex flex-col justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mt-4">About Me</h1>
@@ -22,6 +20,10 @@ export default function AboutMe() {
             recusandae?
           </p>
         </div>
+      </div>
+      
+      <div className="border h-fit w-fit ml-10">
+        <img src="./img/about-me.jpg" alt="About Me" className="w-full h-full" />
       </div>
     </section>
   );
