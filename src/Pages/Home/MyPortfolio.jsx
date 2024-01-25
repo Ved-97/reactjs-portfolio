@@ -33,7 +33,7 @@ export default function MyPortfolio() {
         {data?.portfolio?.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-start gap-32 flex-1 bg-white shadow-lg cursor-pointer rounded-tl-2xl rounded-tr-2xl portfolio--section--card"
+            className="flex flex-col h-full items-start gap-32 flex-1 bg-white shadow-lg cursor-pointer rounded-tl-2xl rounded-tr-2xl portfolio--section--card"
           >
             <div className="portfolio--section--img">
               <img src={item.src} alt="Placeholder" className="rounded-2xl" />

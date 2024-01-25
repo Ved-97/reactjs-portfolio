@@ -2,16 +2,16 @@
   "portfolio": [
     {
       "id": "1",
-      "src": "./img/placeholder-image.png",
-      "title": "Ahuse",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "src": "./img/Projects/streetcarenow.png",
+      "title": "Street Care Now",
+      "description": "Passionate about leveraging technology for positive social impact! 🌐 Currently contributing to Bright Mind Enrichment, where I'm immersed in a dynamic and user-centric platform revolutionizing street care services. 🚀 Using ReactJS, I've crafted efficient and engaging user interfaces, while Tailwind CSS adds a sleek touch. 🎨 The integration of Firebase ensures seamless functionality, creating a robust foundation for community engagement. ",
       "link": "View In Github"
     },
     {
       "id": "2",
-      "src": "./img/placeholder-image-1.png",
-      "title": "App Dashboard",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "src": "./img/Projects/Quick-Deal.png",
+      "title": "Quick Deal",
+      "description": "Developed a feature-rich e-commerce web application using HTML, JS, CSS, and PHP. Key features include an intuitive product catalog, secure user authentication, and a responsive design for seamless shopping. Introduced a 'Buy in Bulk' option, enhancing user experience. The project, showcases my commitment to creating user-centric solutions. Explore my GitHub link to experience the innovative features.",
       "link": "View In Github"
     },
     {
