@@ -2,15 +2,14 @@ import data from "../../data/index.json";
 
 export default function MyPortfolio() {
   return (
-  
-    <section className="flex flex-col py-28 px-20 portfolio--section" id="MyPortfolio">
-      <div className="flex justify-between items-center w-full portfolio--container-box">
-        <div className="flex flex-col items-start gap-5 portfolio--container">
-          <p className="text-xl font-semibold sub--title">Recent Projects</p>
-          <h2 className="text-4xl font-bold section--heading">My Portfolio</h2>
+    <section className="flex flex-col py-28 px-20 mb-10 space-y-10 bg-slate-300" id="MyPortfolio">
+      <div className="flex justify-between items-center w-full">
+        <div className="flex flex-col items-start space-y-5">
+          <p className="text-xl font-semibold ">Recent Projects</p>
+          <h2 className="text-4xl font-bold ">My Portfolio</h2>
         </div>
         <div>
-          <button className="btn btn-github">
+        <a href="https://github.com/Ved-97" target="_blank" rel="noopener noreferrer" className="btn btn-github">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -19,36 +18,34 @@ export default function MyPortfolio() {
               fill="none"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M16.3333 0.166748C7.50028 0.166748 0.333252 7.33378 0.333252 16.1667C0.333252 24.9997 7.50028 32.1667 16.3333 32.1667C25.1489 32.1667 32.3333 24.9997 32.3333 16.1667C32.3333 7.33378 25.1489 0.166748 16.3333 0.166748ZM26.9016 7.54202C28.8105 9.8674 29.9559 12.8348 29.9906 16.0452C29.5394 15.9585 25.0274 15.0387 20.4808 15.6114C20.3767 15.3858 20.2899 15.1428 20.1858 14.8999C19.9081 14.2405 19.5958 13.5637 19.2834 12.9216C24.3159 10.8739 26.6066 7.9238 26.9016 7.54202ZM16.3333 2.52684C19.804 2.52684 22.9797 3.82836 25.3919 5.96285C25.1489 6.30992 23.0838 9.06914 18.2248 10.8912C15.9862 6.77846 13.5047 3.41187 13.1229 2.89126C14.1467 2.64831 15.2227 2.52684 16.3333 2.52684ZM10.5199 3.811C10.8843 4.2969 13.3138 7.68085 15.5871 11.7068C9.20093 13.4075 3.56102 13.3728 2.95364 13.3728C3.83867 9.13855 6.70201 5.61577 10.5199 3.811ZM2.65863 16.1841C2.65863 16.0452 2.65863 15.9064 2.65863 15.7676C3.24865 15.7849 9.87772 15.8717 16.6977 13.824C17.0969 14.5875 17.4613 15.3684 17.8084 16.1493C17.6348 16.2014 17.4439 16.2535 17.2704 16.3055C10.2248 18.5788 6.47642 24.7914 6.16405 25.312C3.99485 22.8999 2.65863 19.6895 2.65863 16.1841ZM16.3333 29.8413C13.1749 29.8413 10.2595 28.7654 7.95147 26.9606C8.19442 26.4574 10.971 21.1125 18.676 18.4227C18.7107 18.4053 18.7281 18.4053 18.7628 18.388C20.689 23.3684 21.47 27.5506 21.6782 28.748C20.0296 29.4595 18.2248 29.8413 16.3333 29.8413ZM23.9515 27.4986C23.8127 26.6656 23.0838 22.6743 21.2964 17.7632C25.5828 17.0864 29.3311 18.1971 29.7997 18.3533C29.2097 22.1537 27.0231 25.4335 23.9515 27.4986Z"
                 fill="currentColor"
               />
             </svg>
             Visit My GitHub
-          </button>
+       </a>
         </div>
       </div>
-      <div className="flex items-center justify-center w-full gap-16 portfolio--section--container">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
         {data?.portfolio?.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col h-full items-start gap-32 flex-1 bg-white shadow-lg cursor-pointer rounded-tl-2xl rounded-tr-2xl portfolio--section--card"
-          >
-            <div className="portfolio--section--img">
-              <img src={item.src} alt="Placeholder" className="rounded-2xl" />
+          <div key={index} className="flex flex-col h-full bg-white shadow-lg rounded-tl-2xl rounded-tr-2xl p-8">
+            <div className="rounded-2xl overflow-hidden">
+              <a href={item.live} target="_blank" rel="noopener noreferrer">
+                <img src={item.src} alt="Placeholder" className="w-full h-40 cursor-pointer object-cover" />
+              </a>
             </div>
-            <div className="flex flex-col py-32 px-8 items-start gap-32 self-stretch portfolio--section--card--content">
+            <div className="flex flex-col py-8 px-4 items-start gap-8 self-stretch">
               <div>
-                <h3 className="text-xl font-semibold portfolio--section--title">
+                <h3 className="text-xl font-semibold">
                   {item.title}
                 </h3>
                 <p className="text-md">{item.description}</p>
               </div>
-              <p className="text-sm portfolio--link">
-                {item.link}
-                
-              </p>
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 cursor-pointer underline">
+                Visit Project
+              </a>
             </div>
           </div>
         ))}

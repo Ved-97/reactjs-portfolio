@@ -10,6 +10,7 @@ export default function ContactMe() {
   });
 
   const [errors, setErrors] = useState({});
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,7 +18,7 @@ export default function ContactMe() {
     setErrors({ ...errors, [name]: '' });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Perform validation
@@ -44,9 +45,36 @@ export default function ContactMe() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      setSubmissionStatus(null);
     } else {
-      // Form is valid, you can submit the data or perform further actions
-      console.log('Form submitted:', formData);
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: process.env.REACT_APP_API_KEY, // Replace with your actual API access key
+            ...formData,
+          }),
+        });
+
+        if (response.ok) {
+          setSubmissionStatus('success');
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+            message: '',
+          });
+        } else {
+          setSubmissionStatus('error');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setSubmissionStatus('error');
+      }
     }
   };
 
@@ -58,81 +86,95 @@ export default function ContactMe() {
           Submit the form below or shoot me an email - vedchokshi1597@gmail.com
         </p>
       </div>
-      <form className="w-fit flex flex-col " onSubmit={handleSubmit}>
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        className="w-fit flex flex-col "
+        onSubmit={handleSubmit}
+      >
+
         <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-            <div className="flex flex-col items-start gap-2">
-              <span className="text-md">First Name</span>
-              <input
-                type="text"
-                className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none focus:shadow-outline-primary"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-              
-              />
-              {errors.firstName && <span className="text-red-500">{errors.firstName}</span>}
-            </div>
-
-            <div className="flex flex-col items-start gap-2">
-              <span className="text-md">Last Name</span>
-              <input
-                type="text"
-                className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none focus:shadow-outline-primary"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                
-              />
-              {errors.lastName && <span className="text-red-500">{errors.lastName}</span>}
-            </div>
-
-            <div className="flex flex-col items-start gap-2">
-              <span className="text-md">Email</span>
-              <input
-                type="email"
-                className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none focus:shadow-outline-primary"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              
-              />
-              {errors.email && <span className="text-red-500">{errors.email}</span>}
-            </div>
-
-            <div className="flex flex-col items-start gap-2">
-              <span className="text-md">Phone Number</span>
-              <input
-                type="tel"
-                className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none focus:shadow-outline-primary"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                
-              />
-              {errors.phoneNumber && <span className="text-red-500">{errors.phoneNumber}</span>}
-            </div>
-
-            <div className="flex flex-col col-span-2 items-start gap-2">
-              <span className="text-md">Message</span>
-              <textarea
-                className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none focus:shadow-outline-primary"
-                name="message"
-                id="message"
-                rows="8"
-                placeholder="Type your message..."
-                value={formData.message}
-                onChange={handleChange}
-              />
-              {errors.message && <span className="text-red-500">{errors.message}</span>}
-            </div>
-
-            </div>
-            <div className="text-center">
-              <button className="bg-primary text-black py-2 px-6 rounded-full hover:bg-primary-dark focus:outline-none focus:shadow-outline-primary">
-                Submit
-              </button>
+          {/* First Name */}
+          <div className="flex flex-col items-start gap-2">
+            <span className="text-md">First Name</span>
+            <input
+              type="text"
+              className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+            {errors.firstName && <span className="text-red-500">{errors.firstName}</span>}
           </div>
+
+          {/* Last Name */}
+          <div className="flex flex-col items-start gap-2">
+            <span className="text-md">Last Name</span>
+            <input
+              type="text"
+              className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+            {errors.lastName && <span className="text-red-500">{errors.lastName}</span>}
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col items-start gap-2">
+            <span className="text-md">Email</span>
+            <input
+              type="email"
+              className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {errors.email && <span className="text-red-500">{errors.email}</span>}
+          </div>
+
+          {/* Phone Number */}
+          <div className="flex flex-col items-start gap-2">
+            <span className="text-md">Phone Number</span>
+            <input
+              type="tel"
+              className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+            />
+            {errors.phoneNumber && <span className="text-red-500">{errors.phoneNumber}</span>}
+          </div>
+
+          {/* Message */}
+          <div className="flex flex-col col-span-2 items-start gap-2">
+            <span className="text-md">Message</span>
+            <textarea
+              className="w-full py-2 px-4 rounded border border-sky-600 bg-white focus:outline-none"
+              name="message"
+              id="message"
+              rows="8"
+              placeholder="Type your message..."
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {errors.message && <span className="text-red-500">{errors.message}</span>}
+          </div>
+        </div>
+
+        <div className="text-center mt-5">
+          <button type="submit" className="btn btn-outline-primary ml-4">
+            Submit
+          </button>
+        </div>
       </form>
+
+      {submissionStatus === 'success' && (
+        <div className="text-green-500 mt-3">Form submitted successfully!</div>
+      )}
+      {submissionStatus === 'error' && (
+        <div className="text-red-500 mt-3">Error submitting the form. Please try again later.</div>
+      )}
     </section>
   );
 }

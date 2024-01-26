@@ -4,22 +4,25 @@
       "id": "1",
       "src": "./img/Projects/streetcarenow.png",
       "title": "Street Care Now",
-      "description": "Passionate about leveraging technology for positive social impact! 🌐 Currently contributing to Bright Mind Enrichment, where I'm immersed in a dynamic and user-centric platform revolutionizing street care services. 🚀 Using ReactJS, I've crafted efficient and engaging user interfaces, while Tailwind CSS adds a sleek touch. 🎨 The integration of Firebase ensures seamless functionality, creating a robust foundation for community engagement. ",
-      "link": "View In Github"
+      "description": "Passionate about technology for social impact! Contributing to Bright Mind Enrichment, I shape user-centric interfaces with ReactJS and sleek designs using Tailwind CSS. Firebase integration ensures seamless functionality, fostering robust community engagement.",
+      "link": "https://github.com/developerBME/street_care_webapp",
+      "live": "https://streetcarenow.org/"
     },
     {
       "id": "2",
       "src": "./img/Projects/Quick-Deal.png",
       "title": "Quick Deal",
-      "description": "Developed a feature-rich e-commerce web application using HTML, JS, CSS, and PHP. Key features include an intuitive product catalog, secure user authentication, and a responsive design for seamless shopping. Introduced a 'Buy in Bulk' option, enhancing user experience. The project, showcases my commitment to creating user-centric solutions. Explore my GitHub link to experience the innovative features.",
-      "link": "View In Github"
+      "description": "Built an advanced e-commerce site with HTML, JS, CSS, and PHP, featuring an intuitive catalog, secure authentication, and responsive design. Introduced 'Buy in Bulk' for enhanced user experience. Explore GitHub for innovative features.",
+      "link": "https://github.com/savneetshuann/Quick_Deal",
+      "live": "https://savneetshuann.github.io/Quick_Deal/"
     },
     {
       "id": "3",
-      "src": "./img/placeholder-image-2.png",
-      "title": "Easy Rentn",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
+      "src": "./img/Projects/virtual-workspace.png",
+      "title": "Virtual Workspace",
+      "description": "Virtual Workspace pioneers AR, empowering users to craft 3D models independently. Transform real-life objects into virtual counterparts, aiding informed decisions. Demonstrates my commitment to cutting-edge technology and user-centric solutions.",
+      "link": "https://github.com/Ved-97/Virtual-Workspace",
+      "live": ""
     }
   ]
 }

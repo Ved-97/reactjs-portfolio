@@ -171,14 +171,7 @@ function Footer() {
         </div>
       </div>
       <hr className="divider" />
-      <div className="footer--content--container">
-        <p className="footer--content">Made by Vedant</p>
-        <div className="footer--social--icon">
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-      </div>
+        <p className="">Made by Vedant with ❤️ </p>
     </footer>
   );
 }
