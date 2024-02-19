@@ -14,7 +14,8 @@ export default function HeroSection() {
             <br /> Transforming ideas into elegant code for a smarter, connected world.
           </p>
         </div>
-        <button className="btn btn-primary">Get In Touch</button>
+        {/* <link to="Contact" className="btn btn-primary">Get In Touch</link>  
+        rel="noopener noreferrer" */}
       </div>
       <div className="hero--section--img">
         <img src="./img/hero_img.png" alt="Hero Section" />
