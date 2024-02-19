@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import imglogo from "../../img/logo.png";
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -39,7 +40,7 @@ function Navbar() {
 
     <nav className={`navbar flex justify-between items-center z-10 px-4 py-3 bg-white shadow fixed top-0 left-0 right-0 ${navActive ? "active" : ""}`}>
       <div className="flex items-center">
-        <img className="h-10 w-30" src="./img/logo.png" alt="Logo" />
+        <img className="h-10 w-30" src={imglogo} alt="Logo" />
       </div>
       <a onClick={toggleNav} className={`nav__hamburger ${navActive ? "active" : ""}`}>
         <span className="block h-1 w-6 bg-black mb-1"></span>
