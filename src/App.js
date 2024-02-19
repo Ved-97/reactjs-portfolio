@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Pages/Home/Navbar";
 import Home from "./Pages/Home/Homescreen";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="*" element={<div>404 Not Found</div>}></Route>
           </Routes>
           <Analytics />
+          <SpeedInsights />
         </div>
       </Router>
     </div>
