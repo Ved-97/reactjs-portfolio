@@ -2,7 +2,7 @@ import data from "../../data/index.json";
 
 export default function MyPortfolio() {
   return (
-    <section className="flex flex-col py-28 px-20 mb-10 space-y-10 bg-slate-300" id="MyPortfolio">
+    <section className="flex flex-col py-28 px-20 mb-10 space-y-10 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500" id="MyPortfolio">
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-col items-start space-y-5">
           <p className="text-xl font-semibold ">Recent Projects</p>
@@ -30,7 +30,7 @@ export default function MyPortfolio() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
         {data?.portfolio?.map((item, index) => (
-          <div key={index} className="flex flex-col h-full bg-white shadow-lg rounded-tl-2xl rounded-tr-2xl p-8">
+          <div key={index} className="flex flex-col h-full bg-white shadow-lg rounded-2xl p-8">
             <div className="rounded-2xl overflow-hidden">
               <a href={item.live} target="_blank" rel="noopener noreferrer">
                 <img src={item.src} alt="Placeholder" className="w-full h-40 cursor-pointer object-cover" />
@@ -38,10 +38,10 @@ export default function MyPortfolio() {
             </div>
             <div className="flex flex-col py-8 px-4 items-start gap-8 self-stretch">
               <div>
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-center">
                   {item.title}
                 </h3>
-                <p className="text-md">{item.description}</p>
+                <p className="text-md text-justify">{item.description}</p>
               </div>
               <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 cursor-pointer underline">
                 Visit Project

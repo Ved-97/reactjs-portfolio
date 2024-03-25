@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
 
-    <nav className={`navbar flex justify-between items-center z-10 px-4 py-3 bg-white shadow fixed top-0 left-0 right-0 ${navActive ? "active" : ""}`}>
+    <nav className={`navbar flex justify-between items-center rounded-[30px] bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 z-10 px-4 py-3 shadow fixed top-0 left-0 right-0 ${navActive ? "active" : ""}`}>
       <div className="flex items-center">
         <img className="h-10 w-30" src={imglogo} alt="Logo" />
       </div>
